@@ -20,6 +20,9 @@ mongoose
     .catch((err) => console.log(err));
 
 //routes
+app.use("/", (req, res) => {
+    res.json({ message: "Welcome to blog app" });
+});
 app.use("/blog", blogHandler);
 app.use("/user", userHandler);
 app.use(errorHandler);
